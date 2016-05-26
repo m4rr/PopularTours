@@ -14,33 +14,35 @@ protocol ReviewCellDelegate: class {
 
   func reviewDescription(sender: ReviewCell) -> String
 
+  func reviewSuperWidth(sender: ReviewCell) -> CGFloat
+
 }
 
-class ReviewCell: UITableViewCell {
+class ReviewCell: UICollectionViewCell {
 
   weak var delegate: ReviewCellDelegate?
 
   var indexPath: NSIndexPath!
 
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    // Initialization code
-  }
-
-  override func setSelected(selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-
-    // Configure the view for the selected state
-  }
-
-  override func layoutSubviews() {
-    textLabel?.numberOfLines = 0
-    textLabel?.text = delegate?.reviewText(self)
-    detailTextLabel?.numberOfLines = 0
-    detailTextLabel?.text = delegate?.reviewDescription(self)
-
-    super.layoutSubviews()
+  override func preferredLayoutAttributesFittingAttributes(layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+    layoutAttributes.frame.size.width = delegate!.reviewSuperWidth(self)
+    return layoutAttributes
   }
 
 }
 
+class ReviewTextCell: ReviewCell {
+
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var textLabel: UILabel!
+
+  override func layoutSubviews() {
+    titleLabel.text = delegate?.reviewText(self)
+    textLabel.text = delegate?.reviewDescription(self)
+
+    updateConstraintsIfNeeded()
+
+    super.layoutSubviews()
+  }
+  
+}

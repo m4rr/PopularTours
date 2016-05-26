@@ -10,12 +10,12 @@ import UIKit
 
 class ReviewsViewController: UIViewController {
 
-  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var collectionView: UICollectionView!
 
   // Assume a tour object should be provided to ReviewsViewController on initialization.
   var tour: Tour! = Tour()
 
-  private lazy var dataSource: ReviewsDataSource = ReviewsDataSource(tour: self.tour, tableView: self.tableView)
+  private lazy var dataSource: ReviewsDataSource = ReviewsDataSource(tour: self.tour, collectionView: self.collectionView)
 
   private let apiManager: ApiManagerProtocol = ApiManager(baseURL: "https://www.getyourguide.com")
 
@@ -24,18 +24,27 @@ class ReviewsViewController: UIViewController {
 
     assert(tour != nil, "A tour object should be provided to ReviewsViewController")
 
-    tableView.rowHeight = UITableViewAutomaticDimension
-    tableView.dataSource = dataSource
-    tableView.delegate = dataSource
+    
+    collectionView.dataSource = dataSource
+    collectionView.delegate = dataSource
+    collectionView.contentInset.top = 10
+    collectionView.contentInset.bottom = 10
 
     showReviews()
   }
+
+//  override func viewDidAppear(animated: Bool) {
+//    super.viewDidAppear(animated)
+//
+//    let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+//    flowLayout.estimatedItemSize = CGSize(width: view.frame.width, height: 150)
+//  }
 
   private func showReviews() {
     apiManager.reviews(tour) { (reviews) in
       self.tour.reviews = reviews
       NSOperationQueue.mainQueue().addOperationWithBlock {
-        self.tableView.reloadData()
+        self.collectionView.reloadData()
       }
     }
   }
