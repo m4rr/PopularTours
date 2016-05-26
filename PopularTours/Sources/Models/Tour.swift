@@ -16,20 +16,25 @@ struct TourURI {
 
 }
 
-struct Tour {
+class Tour {
 
   var reviews: [Review] = []
 
   // Assume identifiers of tours are obtained by response of common `get_tours` request.
   var URI = TourURI(tourId: "tempelhof-2-hour-airport-history-tour-berlin-airlift-more-t23776", tourCityId: "berlin-l17")
 
+  required init?(_ map: Map) {}
+
+  init() {
+
+  }
+
 }
 
 extension Tour: Mappable {
 
-  init?(_ map: Map) {}
 
-  mutating func mapping(map: Map) {
+   func mapping(map: Map) {
     reviews <- map["data"]
   }
 

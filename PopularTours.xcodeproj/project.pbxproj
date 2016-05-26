@@ -18,6 +18,8 @@
 		039A462A1CF73F2B007E0023 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 039A46291CF73F2B007E0023 /* README.md */; };
 		039A462C1CF73F99007E0023 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A462B1CF73F99007E0023 /* ApiManager.swift */; };
 		039A462E1CF74053007E0023 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A462D1CF74053007E0023 /* NetworkManager.swift */; };
+		03CAE4491CF76E5A000D2D2B /* ReviewsDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE4481CF76E5A000D2D2B /* ReviewsDataSourse.swift */; };
+		03CAE44C1CF7712B000D2D2B /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE44B1CF7712B000D2D2B /* ReviewCell.swift */; };
 		274562449F2D6FAEAA3758CD /* Pods_PopularTours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813F3D6A8603E225A3366ACF /* Pods_PopularTours.framework */; };
 		BCDA736D99569524E47D2D18 /* Pods_PopularToursTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB318393C570FBB9BFF224E /* Pods_PopularToursTests.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		039A46291CF73F2B007E0023 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		039A462B1CF73F99007E0023 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		039A462D1CF74053007E0023 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		03CAE4481CF76E5A000D2D2B /* ReviewsDataSourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsDataSourse.swift; sourceTree = "<group>"; };
+		03CAE44B1CF7712B000D2D2B /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		40DBA0131203E9701588738E /* Pods-PopularToursTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopularToursTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PopularToursTests/Pods-PopularToursTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5BB318393C570FBB9BFF224E /* Pods_PopularToursTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopularToursTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		635FF0F1EF49CE8D211CFBDE /* Pods-PopularTours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopularTours.release.xcconfig"; path = "Pods/Target Support Files/Pods-PopularTours/Pods-PopularTours.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		03270CBD1CF7670100445517 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				03CAE44A1CF77114000D2D2B /* Views */,
 				0307CF891CF76A9800099201 /* Managers */,
 				03270CBF1CF7676700445517 /* Controllers */,
 				03270CC01CF7676F00445517 /* Models */,
@@ -112,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				039A460B1CF73D22007E0023 /* ReviewsViewController.swift */,
+				03CAE4481CF76E5A000D2D2B /* ReviewsDataSourse.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +168,14 @@
 				039A461E1CF73D22007E0023 /* PopularToursTests.swift */,
 			);
 			path = PopularToursTests;
+			sourceTree = "<group>";
+		};
+		03CAE44A1CF77114000D2D2B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03CAE44B1CF7712B000D2D2B /* ReviewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		102ABDDB4344D55DFDB84E8A /* Frameworks */ = {
@@ -386,7 +400,9 @@
 			files = (
 				039A462C1CF73F99007E0023 /* ApiManager.swift in Sources */,
 				039A462A1CF73F2B007E0023 /* README.md in Sources */,
+				03CAE4491CF76E5A000D2D2B /* ReviewsDataSourse.swift in Sources */,
 				03270CBC1CF74E9C00445517 /* Review.swift in Sources */,
+				03CAE44C1CF7712B000D2D2B /* ReviewCell.swift in Sources */,
 				039A462E1CF74053007E0023 /* NetworkManager.swift in Sources */,
 				03270CBA1CF7491400445517 /* Tour.swift in Sources */,
 				039A460C1CF73D22007E0023 /* ReviewsViewController.swift in Sources */,

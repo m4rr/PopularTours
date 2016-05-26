@@ -10,22 +10,34 @@ import UIKit
 
 class ReviewsViewController: UIViewController {
 
+  @IBOutlet weak var tableView: UITableView!
+
+  // Assume a tour object should be provided to ReviewsViewController on initialization.
+  var tour: Tour! = Tour()
+
+  private lazy var dataSource: ReviewsDataSource = ReviewsDataSource(tour: self.tour, tableView: self.tableView)
+
   private let apiManager: ApiManagerProtocol = ApiManager(baseURL: "https://www.getyourguide.com")
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let t = Tour()
+    assert(tour != nil, "A tour object should be provided to ReviewsViewController")
 
-    apiManager.reviews(t) { (rs) in
-      print(rs)
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.dataSource = dataSource
+    tableView.delegate = dataSource
+
+    showReviews()
+  }
+
+  private func showReviews() {
+    apiManager.reviews(tour) { (reviews) in
+      self.tour.reviews = reviews
+      NSOperationQueue.mainQueue().addOperationWithBlock {
+        self.tableView.reloadData()
+      }
     }
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
 
 }
