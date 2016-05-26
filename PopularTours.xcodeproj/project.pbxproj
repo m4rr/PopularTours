@@ -84,6 +84,7 @@
 				039A46071CF73D22007E0023 /* Products */,
 				2B943C8DB062412BB1148662 /* Pods */,
 				102ABDDB4344D55DFDB84E8A /* Frameworks */,
+				039A46291CF73F2B007E0023 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,7 +110,6 @@
 				039A46101CF73D22007E0023 /* Assets.xcassets */,
 				039A46121CF73D22007E0023 /* LaunchScreen.storyboard */,
 				039A46151CF73D22007E0023 /* Info.plist */,
-				039A46291CF73F2B007E0023 /* README.md */,
 			);
 			path = PopularTours;
 			sourceTree = "<group>";
