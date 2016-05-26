@@ -13,6 +13,7 @@
 		039A46111CF73D22007E0023 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 039A46101CF73D22007E0023 /* Assets.xcassets */; };
 		039A46141CF73D22007E0023 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039A46121CF73D22007E0023 /* LaunchScreen.storyboard */; };
 		039A461F1CF73D22007E0023 /* PopularToursTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A461E1CF73D22007E0023 /* PopularToursTests.swift */; };
+		039A462A1CF73F2B007E0023 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 039A46291CF73F2B007E0023 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		039A461A1CF73D22007E0023 /* PopularToursTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopularToursTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		039A461E1CF73D22007E0023 /* PopularToursTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularToursTests.swift; sourceTree = "<group>"; };
 		039A46201CF73D22007E0023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		039A46291CF73F2B007E0023 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				039A46101CF73D22007E0023 /* Assets.xcassets */,
 				039A46121CF73D22007E0023 /* LaunchScreen.storyboard */,
 				039A46151CF73D22007E0023 /* Info.plist */,
+				039A46291CF73F2B007E0023 /* README.md */,
 			);
 			path = PopularTours;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039A462A1CF73F2B007E0023 /* README.md in Sources */,
 				039A460C1CF73D22007E0023 /* ViewController.swift in Sources */,
 				039A460A1CF73D22007E0023 /* AppDelegate.swift in Sources */,
 			);
