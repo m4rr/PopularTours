@@ -42,31 +42,55 @@ extension ReviewsDataSource: UICollectionViewDataSource {
 
 extension ReviewsDataSource: UICollectionViewDelegate {
 
-
 }
-
-
 
 extension ReviewsDataSource: UICollectionViewDelegateFlowLayout {
 
-//  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//    return CGSize(width: collectionView.frame.width - 20, height: 100)
-//  }
-}
+  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    return cellSizeAt(indexPath: indexPath)
+  }
 
+  private func cellSizeAt(indexPath indexPath: NSIndexPath) -> CGSize {
+    let review = reviewAt(indexPath: indexPath)
+    var fullHeight: CGFloat = 8
+
+    let baseFrame = collectionView.frame.insetBy(dx: 16, dy: 16)
+
+    let label = UILabel(frame: baseFrame)
+    label.numberOfLines = 0
+    label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle2)
+    label.text = review.title
+    label.sizeToFit()
+
+    fullHeight += label.frame.height
+    fullHeight += 8
+
+    label.frame = baseFrame
+    label.frame.insetInPlace(dx: 16, dy: 16)
+    label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+    label.text = review.message
+    label.sizeToFit()
+
+    fullHeight += label.frame.height
+    fullHeight += 8
+
+    return CGSize(width: collectionView.frame.width, height: fullHeight)
+  }
+
+}
 
 extension ReviewsDataSource: ReviewCellDelegate {
 
-  func reviewText(sender: ReviewCell) -> String {
-    let indexPath = sender.indexPath
-
-    return tour.reviews[indexPath.item].title ?? "<>"
+  private func reviewAt(indexPath indexPath: NSIndexPath) -> Review {
+    return tour.reviews[indexPath.item]
   }
 
-  func reviewDescription(sender: ReviewCell) -> String {
-    let indexPath = sender.indexPath
+  func reviewText(sender: ReviewCell) -> String? {
+    return reviewAt(indexPath: sender.indexPath).title
+  }
 
-    return tour.reviews[indexPath.item].message ?? "<>"
+  func reviewDescription(sender: ReviewCell) -> String? {
+    return reviewAt(indexPath: sender.indexPath).message
   }
 
   func reviewSuperWidth(sender: ReviewCell) -> CGFloat {

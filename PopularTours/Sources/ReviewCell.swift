@@ -10,9 +10,9 @@ import UIKit
 
 protocol ReviewCellDelegate: class {
 
-  func reviewText(sender: ReviewCell) -> String
+  func reviewText(sender: ReviewCell) -> String?
 
-  func reviewDescription(sender: ReviewCell) -> String
+  func reviewDescription(sender: ReviewCell) -> String?
 
   func reviewSuperWidth(sender: ReviewCell) -> CGFloat
 
