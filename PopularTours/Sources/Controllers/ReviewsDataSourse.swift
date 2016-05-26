@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-
-
 class ReviewsDataSource: NSObject {
 
   let tour: Tour

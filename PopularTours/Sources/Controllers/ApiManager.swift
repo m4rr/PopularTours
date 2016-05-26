@@ -18,7 +18,7 @@ protocol ApiManagerProtocol {
 public struct RequestParameters {
 
   enum SortBy: String, WrappableEnum {
-    // Modern Swift styleguide is lowercase for enum cases
+    // Modern Swift styleguide is lowercased enum cases.
     case dateOfReview = "date_of_review"
   }
 
@@ -43,13 +43,13 @@ final class ApiManager: ApiManagerProtocol {
     self.baseURL = baseURL
   }
 
-
   private let networkManager: NetworkManagerProtocol = NetworkManager()
 
   func reviews(tour: Tour, completion: [Review] -> Void) {
     let requestUrl = "\(baseURL)/\(tour.URI.tourCityId)/\(tour.URI.tourId)/reviews.json"
 
-    let requestParameters = RequestParameters()
+    var requestParameters = RequestParameters()
+    requestParameters.count = 20
 
     networkManager.makeRequest(requestUrl, method: .GET, parameters: try? Wrap(requestParameters)) { (json, error) in
       if let error = error {
