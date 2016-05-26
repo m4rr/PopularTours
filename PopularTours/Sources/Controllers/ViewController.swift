@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ReviewsViewController: UIViewController {
 
   private let apiManager: ApiManagerProtocol = ApiManager(baseURL: "https://www.getyourguide.com")
 
