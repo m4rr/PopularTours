@@ -76,6 +76,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03270CBD1CF7670100445517 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				039A46091CF73D22007E0023 /* AppDelegate.swift */,
+				03270CBF1CF7676700445517 /* Controllers */,
+				03270CC01CF7676F00445517 /* Models */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		03270CBE1CF7670B00445517 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				039A460D1CF73D22007E0023 /* Main.storyboard */,
+				039A46101CF73D22007E0023 /* Assets.xcassets */,
+				039A46121CF73D22007E0023 /* LaunchScreen.storyboard */,
+				039A46151CF73D22007E0023 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		03270CBF1CF7676700445517 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				039A460B1CF73D22007E0023 /* ViewController.swift */,
+				039A462B1CF73F99007E0023 /* ApiManager.swift */,
+				039A462D1CF74053007E0023 /* NetworkManager.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		03270CC01CF7676F00445517 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				03270CB91CF7491400445517 /* Tour.swift */,
+				03270CBB1CF74E9C00445517 /* Review.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		039A45FD1CF73D22007E0023 = {
 			isa = PBXGroup;
 			children = (
@@ -100,16 +140,8 @@
 		039A46081CF73D22007E0023 /* PopularTours */ = {
 			isa = PBXGroup;
 			children = (
-				039A46091CF73D22007E0023 /* AppDelegate.swift */,
-				039A460B1CF73D22007E0023 /* ViewController.swift */,
-				039A462B1CF73F99007E0023 /* ApiManager.swift */,
-				039A462D1CF74053007E0023 /* NetworkManager.swift */,
-				03270CB91CF7491400445517 /* Tour.swift */,
-				03270CBB1CF74E9C00445517 /* Review.swift */,
-				039A460D1CF73D22007E0023 /* Main.storyboard */,
-				039A46101CF73D22007E0023 /* Assets.xcassets */,
-				039A46121CF73D22007E0023 /* LaunchScreen.storyboard */,
-				039A46151CF73D22007E0023 /* Info.plist */,
+				03270CBD1CF7670100445517 /* Sources */,
+				03270CBE1CF7670B00445517 /* Resources */,
 			);
 			path = PopularTours;
 			sourceTree = "<group>";
