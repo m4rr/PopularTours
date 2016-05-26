@@ -9,7 +9,6 @@
 import Foundation
 import ObjectMapper
 
-
 struct Review {
 
   var
@@ -28,20 +27,22 @@ struct Review {
     return Double(_rating ?? "") ?? 0
   }
 
-  static func from(JSON: AnyObject) -> Review? {
-    return Mapper<Review>().map(JSON)
+  static func from(json json: AnyObject) -> Review? {
+    return Mapper<Review>().map(json)
   }
 
-  static func fromArray(JSON: AnyObject) -> [Review] {
-    if let JSONDic = JSON as? [String: AnyObject], data = JSONDic["data"] {
+  static func from(jsonArray json: AnyObject) -> [Review] {
+    if let
+      jsonDic = json as? [String: AnyObject],
+      data = jsonDic["data"],
+      reviews = Mapper<Review>().mapArray(data) {
 
-      let a = Mapper<Review>().mapArray(data)
-      return a ?? []
+      return reviews ?? []
     }
 
     return []
   }
-  
+
 }
 
 extension Review: Mappable {
@@ -58,6 +59,5 @@ extension Review: Mappable {
     reviewId        <- map["review_id"]
     title           <- map["title"]
   }
-
 
 }

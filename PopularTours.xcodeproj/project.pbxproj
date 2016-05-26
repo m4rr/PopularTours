@@ -76,9 +76,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0307CF891CF76A9800099201 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				039A462B1CF73F99007E0023 /* ApiManager.swift */,
+				039A462D1CF74053007E0023 /* NetworkManager.swift */,
+			);
+			name = Managers;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		03270CBD1CF7670100445517 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0307CF891CF76A9800099201 /* Managers */,
 				03270CBF1CF7676700445517 /* Controllers */,
 				03270CC01CF7676F00445517 /* Models */,
 				039A46091CF73D22007E0023 /* AppDelegate.swift */,
@@ -100,8 +111,6 @@
 		03270CBF1CF7676700445517 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				039A462B1CF73F99007E0023 /* ApiManager.swift */,
-				039A462D1CF74053007E0023 /* NetworkManager.swift */,
 				039A460B1CF73D22007E0023 /* ViewController.swift */,
 			);
 			path = Controllers;
@@ -110,8 +119,8 @@
 		03270CC01CF7676F00445517 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				03270CBB1CF74E9C00445517 /* Review.swift */,
 				03270CB91CF7491400445517 /* Tour.swift */,
+				03270CBB1CF74E9C00445517 /* Review.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

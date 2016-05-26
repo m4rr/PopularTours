@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-public typealias CompletionHandler = (JSON: AnyObject?, error: ErrorType?) -> Void
+public typealias CompletionHandler = (json: AnyObject?, error: ErrorType?) -> Void
 
 public protocol NetworkManagerProtocol {
 
@@ -35,9 +35,9 @@ extension NetworkManager: NetworkManagerProtocol {
       .responseJSON { (response) in
         switch response.result {
         case .Success(let value):
-          completion(JSON: value, error: nil)
+          completion(json: value, error: nil)
         case .Failure(let error):
-          completion(JSON: nil, error: error)
+          completion(json: nil, error: error)
         }
     }
     

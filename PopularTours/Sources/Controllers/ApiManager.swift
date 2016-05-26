@@ -51,11 +51,11 @@ final class ApiManager: ApiManagerProtocol {
 
     let requestParameters = RequestParameters()
 
-    networkManager.makeRequest(requestUrl, method: .GET, parameters: try? Wrap(requestParameters)) { (JSON, error) in
+    networkManager.makeRequest(requestUrl, method: .GET, parameters: try? Wrap(requestParameters)) { (json, error) in
       if let error = error {
         print(error)
-      } else if let JSON = JSON {
-        let reviews = Review.fromArray(JSON)
+      } else if let json = json {
+        let reviews = Review.from(jsonArray: json)
 
         completion(reviews)
       }
