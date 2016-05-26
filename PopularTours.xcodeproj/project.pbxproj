@@ -79,41 +79,41 @@
 		03270CBD1CF7670100445517 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				039A46091CF73D22007E0023 /* AppDelegate.swift */,
 				03270CBF1CF7676700445517 /* Controllers */,
 				03270CC01CF7676F00445517 /* Models */,
+				039A46091CF73D22007E0023 /* AppDelegate.swift */,
 			);
-			name = Sources;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		03270CBE1CF7670B00445517 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				039A460D1CF73D22007E0023 /* Main.storyboard */,
 				039A46101CF73D22007E0023 /* Assets.xcassets */,
-				039A46121CF73D22007E0023 /* LaunchScreen.storyboard */,
 				039A46151CF73D22007E0023 /* Info.plist */,
+				039A46121CF73D22007E0023 /* LaunchScreen.storyboard */,
+				039A460D1CF73D22007E0023 /* Main.storyboard */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		03270CBF1CF7676700445517 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				039A460B1CF73D22007E0023 /* ViewController.swift */,
 				039A462B1CF73F99007E0023 /* ApiManager.swift */,
 				039A462D1CF74053007E0023 /* NetworkManager.swift */,
+				039A460B1CF73D22007E0023 /* ViewController.swift */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		03270CC01CF7676F00445517 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				03270CB91CF7491400445517 /* Tour.swift */,
 				03270CBB1CF74E9C00445517 /* Review.swift */,
+				03270CB91CF7491400445517 /* Tour.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		039A45FD1CF73D22007E0023 = {
@@ -122,8 +122,8 @@
 				039A46081CF73D22007E0023 /* PopularTours */,
 				039A461D1CF73D22007E0023 /* PopularToursTests */,
 				039A46071CF73D22007E0023 /* Products */,
-				2B943C8DB062412BB1148662 /* Pods */,
 				102ABDDB4344D55DFDB84E8A /* Frameworks */,
+				2B943C8DB062412BB1148662 /* Pods */,
 				039A46291CF73F2B007E0023 /* README.md */,
 			);
 			sourceTree = "<group>";
@@ -149,8 +149,8 @@
 		039A461D1CF73D22007E0023 /* PopularToursTests */ = {
 			isa = PBXGroup;
 			children = (
-				039A461E1CF73D22007E0023 /* PopularToursTests.swift */,
 				039A46201CF73D22007E0023 /* Info.plist */,
+				039A461E1CF73D22007E0023 /* PopularToursTests.swift */,
 			);
 			path = PopularToursTests;
 			sourceTree = "<group>";
@@ -410,6 +410,7 @@
 				039A460E1CF73D22007E0023 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		039A46121CF73D22007E0023 /* LaunchScreen.storyboard */ = {
@@ -418,6 +419,7 @@
 				039A46131CF73D22007E0023 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -511,7 +513,7 @@
 			baseConfigurationReference = FE7C0847D96C0B6BC4652047 /* Pods-PopularTours.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = PopularTours/Info.plist;
+				INFOPLIST_FILE = PopularTours/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.m4rr.PopularTours;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -523,7 +525,7 @@
 			baseConfigurationReference = 635FF0F1EF49CE8D211CFBDE /* Pods-PopularTours.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = PopularTours/Info.plist;
+				INFOPLIST_FILE = PopularTours/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.m4rr.PopularTours;
 				PRODUCT_NAME = "$(TARGET_NAME)";
