@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03270CBA1CF7491400445517 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03270CB91CF7491400445517 /* Tour.swift */; };
+		03270CBC1CF74E9C00445517 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03270CBB1CF74E9C00445517 /* Review.swift */; };
 		039A460A1CF73D22007E0023 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A46091CF73D22007E0023 /* AppDelegate.swift */; };
 		039A460C1CF73D22007E0023 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A460B1CF73D22007E0023 /* ViewController.swift */; };
 		039A460F1CF73D22007E0023 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039A460D1CF73D22007E0023 /* Main.storyboard */; };
@@ -14,6 +16,10 @@
 		039A46141CF73D22007E0023 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039A46121CF73D22007E0023 /* LaunchScreen.storyboard */; };
 		039A461F1CF73D22007E0023 /* PopularToursTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A461E1CF73D22007E0023 /* PopularToursTests.swift */; };
 		039A462A1CF73F2B007E0023 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 039A46291CF73F2B007E0023 /* README.md */; };
+		039A462C1CF73F99007E0023 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A462B1CF73F99007E0023 /* ApiManager.swift */; };
+		039A462E1CF74053007E0023 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A462D1CF74053007E0023 /* NetworkManager.swift */; };
+		274562449F2D6FAEAA3758CD /* Pods_PopularTours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813F3D6A8603E225A3366ACF /* Pods_PopularTours.framework */; };
+		BCDA736D99569524E47D2D18 /* Pods_PopularToursTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB318393C570FBB9BFF224E /* Pods_PopularToursTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03270CB91CF7491400445517 /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
+		03270CBB1CF74E9C00445517 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		039A46061CF73D22007E0023 /* PopularTours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularTours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		039A46091CF73D22007E0023 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		039A460B1CF73D22007E0023 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +46,14 @@
 		039A461E1CF73D22007E0023 /* PopularToursTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularToursTests.swift; sourceTree = "<group>"; };
 		039A46201CF73D22007E0023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		039A46291CF73F2B007E0023 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		039A462B1CF73F99007E0023 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		039A462D1CF74053007E0023 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		40DBA0131203E9701588738E /* Pods-PopularToursTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopularToursTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PopularToursTests/Pods-PopularToursTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BB318393C570FBB9BFF224E /* Pods_PopularToursTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopularToursTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		635FF0F1EF49CE8D211CFBDE /* Pods-PopularTours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopularTours.release.xcconfig"; path = "Pods/Target Support Files/Pods-PopularTours/Pods-PopularTours.release.xcconfig"; sourceTree = "<group>"; };
+		813F3D6A8603E225A3366ACF /* Pods_PopularTours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopularTours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DB0AE0C05B94313BB1B78EB /* Pods-PopularToursTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopularToursTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PopularToursTests/Pods-PopularToursTests.release.xcconfig"; sourceTree = "<group>"; };
+		FE7C0847D96C0B6BC4652047 /* Pods-PopularTours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopularTours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PopularTours/Pods-PopularTours.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274562449F2D6FAEAA3758CD /* Pods_PopularTours.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCDA736D99569524E47D2D18 /* Pods_PopularToursTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +82,8 @@
 				039A46081CF73D22007E0023 /* PopularTours */,
 				039A461D1CF73D22007E0023 /* PopularToursTests */,
 				039A46071CF73D22007E0023 /* Products */,
+				2B943C8DB062412BB1148662 /* Pods */,
+				102ABDDB4344D55DFDB84E8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +101,10 @@
 			children = (
 				039A46091CF73D22007E0023 /* AppDelegate.swift */,
 				039A460B1CF73D22007E0023 /* ViewController.swift */,
+				039A462B1CF73F99007E0023 /* ApiManager.swift */,
+				039A462D1CF74053007E0023 /* NetworkManager.swift */,
+				03270CB91CF7491400445517 /* Tour.swift */,
+				03270CBB1CF74E9C00445517 /* Review.swift */,
 				039A460D1CF73D22007E0023 /* Main.storyboard */,
 				039A46101CF73D22007E0023 /* Assets.xcassets */,
 				039A46121CF73D22007E0023 /* LaunchScreen.storyboard */,
@@ -99,6 +123,26 @@
 			path = PopularToursTests;
 			sourceTree = "<group>";
 		};
+		102ABDDB4344D55DFDB84E8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				813F3D6A8603E225A3366ACF /* Pods_PopularTours.framework */,
+				5BB318393C570FBB9BFF224E /* Pods_PopularToursTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2B943C8DB062412BB1148662 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE7C0847D96C0B6BC4652047 /* Pods-PopularTours.debug.xcconfig */,
+				635FF0F1EF49CE8D211CFBDE /* Pods-PopularTours.release.xcconfig */,
+				40DBA0131203E9701588738E /* Pods-PopularToursTests.debug.xcconfig */,
+				9DB0AE0C05B94313BB1B78EB /* Pods-PopularToursTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 039A46231CF73D22007E0023 /* Build configuration list for PBXNativeTarget "PopularTours" */;
 			buildPhases = (
+				57AC185AC329D3D884C9DB9A /* 📦 Check Pods Manifest.lock */,
 				039A46021CF73D22007E0023 /* Sources */,
 				039A46031CF73D22007E0023 /* Frameworks */,
 				039A46041CF73D22007E0023 /* Resources */,
+				9D5D8FAF00B0CCEBD752AD2F /* 📦 Embed Pods Frameworks */,
+				5E9F95E7A8E11BC30734B002 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,9 +170,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 039A46261CF73D22007E0023 /* Build configuration list for PBXNativeTarget "PopularToursTests" */;
 			buildPhases = (
+				8D68B599CD6D5C8209FE4283 /* 📦 Check Pods Manifest.lock */,
 				039A46161CF73D22007E0023 /* Sources */,
 				039A46171CF73D22007E0023 /* Frameworks */,
 				039A46181CF73D22007E0023 /* Resources */,
+				CA700BBBD01659C2CEA0F38A /* 📦 Embed Pods Frameworks */,
+				8E4A8B551E2809A4A1D96E97 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,12 +245,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		57AC185AC329D3D884C9DB9A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5E9F95E7A8E11BC30734B002 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PopularTours/Pods-PopularTours-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D68B599CD6D5C8209FE4283 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8E4A8B551E2809A4A1D96E97 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PopularToursTests/Pods-PopularToursTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D5D8FAF00B0CCEBD752AD2F /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PopularTours/Pods-PopularTours-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA700BBBD01659C2CEA0F38A /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PopularToursTests/Pods-PopularToursTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		039A46021CF73D22007E0023 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039A462C1CF73F99007E0023 /* ApiManager.swift in Sources */,
 				039A462A1CF73F2B007E0023 /* README.md in Sources */,
+				03270CBC1CF74E9C00445517 /* Review.swift in Sources */,
+				039A462E1CF74053007E0023 /* NetworkManager.swift in Sources */,
+				03270CBA1CF7491400445517 /* Tour.swift in Sources */,
 				039A460C1CF73D22007E0023 /* ViewController.swift in Sources */,
 				039A460A1CF73D22007E0023 /* AppDelegate.swift in Sources */,
 			);
@@ -329,6 +476,7 @@
 		};
 		039A46241CF73D22007E0023 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE7C0847D96C0B6BC4652047 /* Pods-PopularTours.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PopularTours/Info.plist;
@@ -340,6 +488,7 @@
 		};
 		039A46251CF73D22007E0023 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 635FF0F1EF49CE8D211CFBDE /* Pods-PopularTours.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PopularTours/Info.plist;
@@ -351,6 +500,7 @@
 		};
 		039A46271CF73D22007E0023 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40DBA0131203E9701588738E /* Pods-PopularToursTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PopularToursTests/Info.plist;
@@ -363,6 +513,7 @@
 		};
 		039A46281CF73D22007E0023 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DB0AE0C05B94313BB1B78EB /* Pods-PopularToursTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PopularToursTests/Info.plist;
@@ -392,6 +543,7 @@
 				039A46251CF73D22007E0023 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		039A46261CF73D22007E0023 /* Build configuration list for PBXNativeTarget "PopularToursTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +552,7 @@
 				039A46281CF73D22007E0023 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

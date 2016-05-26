@@ -10,9 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  private let apiManager: ApiManagerProtocol = ApiManager(baseURL: "https://www.getyourguide.com")
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+
+    let t = Tour()
+
+    apiManager.reviews(t) { (rs) in
+      print(rs)
+    }
   }
 
   override func didReceiveMemoryWarning() {
@@ -22,4 +29,3 @@ class ViewController: UIViewController {
 
 
 }
-
