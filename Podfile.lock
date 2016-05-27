@@ -1,18 +1,21 @@
 PODS:
   - Alamofire (3.3.1)
   - ObjectMapper (1.2.0)
+  - Reachability (3.2)
   - Wrap (1.0.3)
 
 DEPENDENCIES:
   - Alamofire
   - ObjectMapper
+  - Reachability
   - Wrap
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   Wrap: effa36bee314dceafabc62c5117b8a3042d8e290
 
-PODFILE CHECKSUM: d94bd6ae4baf641613d5e3e5098e46ee18577e2a
+PODFILE CHECKSUM: 0eac306d3c9f61512a80fd7dfe379aba052a5652
 
 COCOAPODS: 1.0.0.beta.8

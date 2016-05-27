@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Reachability
 
 class ReviewsViewController: UIViewController {
 
@@ -24,17 +25,44 @@ class ReviewsViewController: UIViewController {
 
   private let apiManager: ApiManager = ApiManager(baseURL: "https://www.getyourguide.com")
 
+  private lazy var reach: Reachability? = Reachability.reachabilityForInternetConnection()
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
     assert(tour != nil, "A tour object should be provided to ReviewsViewController")
-    
+
+    setupReachability()
+    setupCollectionView()
+
+    showReviews()
+  }
+
+  private func setupReachability() {
+    reach?.reachableBlock = { _ in
+      dispatch_async(dispatch_get_main_queue()) {
+        self.navigationItem.leftBarButtonItem?.enabled = true
+        self.navigationItem.rightBarButtonItem?.enabled = true
+
+        self.showReviews()
+      }
+    }
+
+    reach?.unreachableBlock = { _ in
+      dispatch_async(dispatch_get_main_queue()) {
+        self.navigationItem.leftBarButtonItem?.enabled = false
+        self.navigationItem.rightBarButtonItem?.enabled = false
+      }
+    }
+
+    reach?.startNotifier()
+  }
+
+  private func setupCollectionView() {
     collectionView.dataSource = dataSource
     collectionView.delegate = dataSource
     collectionView.contentInset.top = 10
     collectionView.contentInset.bottom = 10
-
-    showReviews()
   }
 
   private func showReviews() {
