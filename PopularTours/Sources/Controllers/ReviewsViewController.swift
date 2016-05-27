@@ -14,16 +14,20 @@ class ReviewsViewController: UIViewController {
 
   // Assume a tour object should be provided to ReviewsViewController on initialization.
   var tour: Tour! = Tour()
+  private var filterValue = 0 {
+    didSet {
+      showReviews()
+    }
+  }
 
   private lazy var dataSource: ReviewsDataSource = ReviewsDataSource(tour: self.tour, collectionView: self.collectionView)
 
-  private let apiManager: ApiManagerProtocol = ApiManager(baseURL: "https://www.getyourguide.com")
+  private let apiManager: ApiManager = ApiManager(baseURL: "https://www.getyourguide.com")
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     assert(tour != nil, "A tour object should be provided to ReviewsViewController")
-
     
     collectionView.dataSource = dataSource
     collectionView.delegate = dataSource
@@ -33,19 +37,36 @@ class ReviewsViewController: UIViewController {
     showReviews()
   }
 
-//  override func viewDidAppear(animated: Bool) {
-//    super.viewDidAppear(animated)
-//
-//    let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-//    flowLayout.estimatedItemSize = CGSize(width: view.frame.width, height: 150)
-//  }
-
   private func showReviews() {
-    apiManager.reviews(tour) { (reviews) in
+    apiManager.reviews(tour, rating: filterValue) { (reviews) in
       self.tour.reviews = reviews
-      NSOperationQueue.mainQueue().addOperationWithBlock {
-        self.collectionView.reloadData()
+
+      // Response will be returned to the main thread.
+      self.collectionView.reloadData()
+    }
+  }
+
+  @IBAction func unwindToReviews(segue: UIStoryboardSegue) {
+
+  }
+
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    guard let identifier = segue.identifier else {
+      return
+    }
+
+    switch identifier {
+    case "showFilter":
+      guard let nc = segue.destinationViewController as? UINavigationController, dc = nc.topViewController as? FilterViewController else {
+        return
       }
+
+      dc.filterValue = self.filterValue
+      dc.filterHandle = { filterValue in
+        self.filterValue = filterValue
+      }
+    default:
+      ()
     }
   }
 

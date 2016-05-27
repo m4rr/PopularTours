@@ -9,11 +9,6 @@
 import Foundation
 import Wrap
 
-protocol ApiManagerProtocol {
-
-  func reviews(tour: Tour, completion: [Review] -> Void)
-
-}
 
 public struct RequestParameters {
 
@@ -26,16 +21,13 @@ public struct RequestParameters {
     case ASC, DESC
   }
 
-  var
-  count     = 5,
-  page      = 0,
-  rating    = 0,
-  sortBy    = SortBy.dateOfReview,
-  direction = SortDirection.DESC
-  
+  var count: Int, page: Int, rating: Int
+  var sortBy: SortBy
+  var direction: SortDirection
+
 }
 
-final class ApiManager: ApiManagerProtocol {
+final class ApiManager {
 
   let baseURL: String
 
@@ -45,14 +37,14 @@ final class ApiManager: ApiManagerProtocol {
 
   private let networkManager: NetworkManagerProtocol = NetworkManager()
 
-  func reviews(tour: Tour, completion: [Review] -> Void) {
+  func reviews(tour: Tour, count: Int = 5, page: Int = 0, rating: Int = 0, completion: [Review] -> Void) {
+
     let requestUrl = "\(baseURL)/\(tour.URI.tourCityId)/\(tour.URI.tourId)/reviews.json"
 
-    var requestParameters = RequestParameters()
-    requestParameters.count = 20
+    let requestParameters = RequestParameters(count: count, page: page, rating: rating, sortBy: .dateOfReview, direction: .DESC)
 
     networkManager.makeRequest(requestUrl, method: .GET, parameters: try? Wrap(requestParameters)) { (json, error) in
-      if let error = error {
+      if let  error = error {
         print(error)
       } else if let json = json {
         let reviews = Review.from(jsonArray: json)

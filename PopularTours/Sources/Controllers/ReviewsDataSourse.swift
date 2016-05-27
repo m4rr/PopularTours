@@ -52,27 +52,31 @@ extension ReviewsDataSource: UICollectionViewDelegateFlowLayout {
 
   private func cellSizeAt(indexPath indexPath: NSIndexPath) -> CGSize {
     let review = reviewAt(indexPath: indexPath)
-    var fullHeight: CGFloat = 8
-
-    let baseFrame = collectionView.frame.insetBy(dx: 16, dy: 16)
+    let spacing: CGFloat = 8
+    let baseFrame = collectionView.frame.insetBy(dx: spacing, dy: spacing)
+    var fullHeight = spacing
 
     let label = UILabel(frame: baseFrame)
     label.numberOfLines = 0
+
     label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle2)
     label.text = review.title
     label.sizeToFit()
 
     fullHeight += label.frame.height
-    fullHeight += 8
+    fullHeight += spacing
 
     label.frame = baseFrame
-    label.frame.insetInPlace(dx: 16, dy: 16)
+
     label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
     label.text = review.message
     label.sizeToFit()
 
     fullHeight += label.frame.height
-    fullHeight += 8
+    fullHeight += spacing
+
+    fullHeight += 18 // fixed-height "author name" label
+    fullHeight += spacing
 
     return CGSize(width: collectionView.frame.width, height: fullHeight)
   }
@@ -93,8 +97,19 @@ extension ReviewsDataSource: ReviewCellDelegate {
     return reviewAt(indexPath: sender.indexPath).message
   }
 
-  func reviewSuperWidth(sender: ReviewCell) -> CGFloat {
-    return collectionView.frame.width
+  func reviewAuthorName(sender: ReviewCell) -> String? {
+    return reviewAt(indexPath: sender.indexPath).author
+  }
+
+  func reviewRating(sender: ReviewCell) -> String? {
+    let rating = reviewAt(indexPath: sender.indexPath).rating
+
+    // Compose n-star string.
+    let ratingByStars = (0..<Int(round(rating))).reduce("") { last, _ in
+      return last + "★"
+    }
+
+    return ratingByStars
   }
 
 }

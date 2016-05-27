@@ -33,8 +33,7 @@ class Tour {
 
 extension Tour: Mappable {
 
-
-   func mapping(map: Map) {
+  func mapping(map: Map) {
     reviews <- map["data"]
   }
 

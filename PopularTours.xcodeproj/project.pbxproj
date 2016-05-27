@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0305D1261CF7BE4200C5F80D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305D1251CF7BE4200C5F80D /* FilterViewController.swift */; };
 		03270CBA1CF7491400445517 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03270CB91CF7491400445517 /* Tour.swift */; };
 		03270CBC1CF74E9C00445517 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03270CBB1CF74E9C00445517 /* Review.swift */; };
 		039A460A1CF73D22007E0023 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A46091CF73D22007E0023 /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0305D1251CF7BE4200C5F80D /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		03270CB91CF7491400445517 /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		03270CBB1CF74E9C00445517 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		039A46061CF73D22007E0023 /* PopularTours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularTours.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,10 +95,10 @@
 		03270CBD1CF7670100445517 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				03CAE44A1CF77114000D2D2B /* Views */,
 				0307CF891CF76A9800099201 /* Managers */,
-				03270CBF1CF7676700445517 /* Controllers */,
 				03270CC01CF7676F00445517 /* Models */,
+				03CAE44A1CF77114000D2D2B /* Views */,
+				03270CBF1CF7676700445517 /* Controllers */,
 				039A46091CF73D22007E0023 /* AppDelegate.swift */,
 			);
 			path = Sources;
@@ -118,6 +120,7 @@
 			children = (
 				039A460B1CF73D22007E0023 /* ReviewsViewController.swift */,
 				03CAE4481CF76E5A000D2D2B /* ReviewsDataSourse.swift */,
+				0305D1251CF7BE4200C5F80D /* FilterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				039A462A1CF73F2B007E0023 /* README.md in Sources */,
 				03CAE4491CF76E5A000D2D2B /* ReviewsDataSourse.swift in Sources */,
 				03270CBC1CF74E9C00445517 /* Review.swift in Sources */,
+				0305D1261CF7BE4200C5F80D /* FilterViewController.swift in Sources */,
 				03CAE44C1CF7712B000D2D2B /* ReviewCell.swift in Sources */,
 				039A462E1CF74053007E0023 /* NetworkManager.swift in Sources */,
 				03270CBA1CF7491400445517 /* Tour.swift in Sources */,
