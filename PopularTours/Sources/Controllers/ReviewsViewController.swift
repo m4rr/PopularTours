@@ -39,6 +39,7 @@ class ReviewsViewController: UIViewController {
     showReviews()
   }
 
+  // Checking for internet connectivity.
   private func setupReachability() {
     reach?.reachableBlock = { _ in
       dispatch_async(dispatch_get_main_queue()) {
@@ -93,22 +94,15 @@ class ReviewsViewController: UIViewController {
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    guard let identifier = segue.identifier else {
-      return
+    guard segue.identifier == "showFilter",
+      let navController = segue.destinationViewController as? UINavigationController,
+      destController = navController.topViewController as? FilterViewController else {
+        return
     }
 
-    switch identifier {
-    case "showFilter":
-      guard let nc = segue.destinationViewController as? UINavigationController, dc = nc.topViewController as? FilterViewController else {
-        return
-      }
-
-      dc.filterValue = self.filterValue
-      dc.filterHandle = { filterValue in
-        self.filterValue = filterValue
-      }
-    default:
-      ()
+    destController.filterValue = self.filterValue
+    destController.filterHandle = { filterValue in
+      self.filterValue = filterValue
     }
   }
 

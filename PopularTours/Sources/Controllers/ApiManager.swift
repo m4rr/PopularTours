@@ -36,7 +36,7 @@ final class ApiManager {
 
   private let networkManager: NetworkManagerProtocol = NetworkManager()
 
-  func reviews(tour: Tour, count: Int = 5, page: Int = 0, rating: Int = 0, completion: ([Review]?, ErrorType?) -> Void) {
+  func reviews(tour: Tour, count: Int = 15, page: Int = 0, rating: Int = 0, completion: ([Review]?, ErrorType?) -> Void) {
 
     let requestUrl = "\(baseURL)/\(tour.URI.tourCityId)/\(tour.URI.tourId)/reviews.json"
 
