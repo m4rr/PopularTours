@@ -5,5 +5,6 @@ The app allows a customer to browse and submit reviews for one of our more popul
 ## Installation
 
 ```sh
+$ gem install cocoapods
 $ pod install
 ```

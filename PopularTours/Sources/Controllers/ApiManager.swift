@@ -9,7 +9,6 @@
 import Foundation
 import Wrap
 
-
 public struct RequestParameters {
 
   enum SortBy: String, WrappableEnum {
