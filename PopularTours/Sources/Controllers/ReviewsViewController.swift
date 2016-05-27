@@ -12,6 +12,7 @@ import Reachability
 class ReviewsViewController: UIViewController {
 
   @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var unreachableIndicator: UIVisualEffectView!
 
   // Assume a tour object should be provided to ReviewsViewController on initialization.
   var tour: Tour! = Tour()
@@ -25,7 +26,7 @@ class ReviewsViewController: UIViewController {
 
   private let apiManager: ApiManager = ApiManager(baseURL: "https://www.getyourguide.com")
 
-  private lazy var reach: Reachability? = Reachability.reachabilityForInternetConnection()
+  private var reach: Reachability? = Reachability.reachabilityForInternetConnection()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,8 +42,7 @@ class ReviewsViewController: UIViewController {
   private func setupReachability() {
     reach?.reachableBlock = { _ in
       dispatch_async(dispatch_get_main_queue()) {
-        self.navigationItem.leftBarButtonItem?.enabled = true
-        self.navigationItem.rightBarButtonItem?.enabled = true
+        self.toggleUnreachableIndicator(true)
 
         self.showReviews()
       }
@@ -50,8 +50,7 @@ class ReviewsViewController: UIViewController {
 
     reach?.unreachableBlock = { _ in
       dispatch_async(dispatch_get_main_queue()) {
-        self.navigationItem.leftBarButtonItem?.enabled = false
-        self.navigationItem.rightBarButtonItem?.enabled = false
+        self.toggleUnreachableIndicator(false)
       }
     }
 
@@ -65,12 +64,27 @@ class ReviewsViewController: UIViewController {
     collectionView.contentInset.bottom = 10
   }
 
-  private func showReviews() {
-    apiManager.reviews(tour, rating: filterValue) { (reviews) in
-      self.tour.reviews = reviews
+  private func toggleUnreachableIndicator(hidden: Bool) {
+    self.navigationItem.leftBarButtonItem?.enabled = hidden
+    self.navigationItem.rightBarButtonItem?.enabled = hidden
 
+    UIView.transitionWithView(unreachableIndicator, duration: 0.3, options: .TransitionFlipFromBottom, animations: {
+      self.unreachableIndicator.hidden = hidden
+    }, completion: nil)
+  }
+
+  private func showReviews() {
+    apiManager.reviews(tour, rating: filterValue) { (reviews, error) in
       // Response will be returned to the main thread.
-      self.collectionView.reloadData()
+      if let _ = error {
+        self.toggleUnreachableIndicator(false)
+      } else if let reviews = reviews {
+        self.toggleUnreachableIndicator(true)
+
+        self.tour.reviews = reviews
+
+        self.collectionView.reloadData()
+      }
     }
   }
 

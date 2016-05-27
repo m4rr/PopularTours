@@ -38,6 +38,10 @@ extension ReviewsDataSource: UICollectionViewDataSource {
     return cell
   }
 
+  func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    return collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "footerView", forIndexPath: indexPath)
+  }
+
 }
 
 extension ReviewsDataSource: UICollectionViewDelegate {
@@ -45,6 +49,10 @@ extension ReviewsDataSource: UICollectionViewDelegate {
 }
 
 extension ReviewsDataSource: UICollectionViewDelegateFlowLayout {
+
+  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+    return tour.reviews.isEmpty ? CGSize(width: collectionView.frame.width, height: 50) : CGSize.zero
+  }
 
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
     return cellSizeAt(indexPath: indexPath)

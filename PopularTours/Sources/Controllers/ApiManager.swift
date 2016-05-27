@@ -37,7 +37,7 @@ final class ApiManager {
 
   private let networkManager: NetworkManagerProtocol = NetworkManager()
 
-  func reviews(tour: Tour, count: Int = 5, page: Int = 0, rating: Int = 0, completion: [Review] -> Void) {
+  func reviews(tour: Tour, count: Int = 5, page: Int = 0, rating: Int = 0, completion: ([Review]?, ErrorType?) -> Void) {
 
     let requestUrl = "\(baseURL)/\(tour.URI.tourCityId)/\(tour.URI.tourId)/reviews.json"
 
@@ -45,11 +45,11 @@ final class ApiManager {
 
     networkManager.makeRequest(requestUrl, method: .GET, parameters: try? Wrap(requestParameters)) { (json, error) in
       if let  error = error {
-        print(error)
+        completion(nil, error)
       } else if let json = json {
         let reviews = Review.from(jsonArray: json)
 
-        completion(reviews)
+        completion(reviews, nil)
       }
     }
 
